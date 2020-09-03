@@ -1,7 +1,7 @@
 
 node {
    // This is to demo github action	
-   def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
+   def sonarUrl = 'sonar.host.url=http://34.215.1.164:9000'
    def mvn = tool (name: 'maven', type: 'maven') + '/bin/mvn'
    stage('SCM Checkout'){
     // Clone repo
@@ -13,7 +13,7 @@ node {
    stage('Sonar Publish'){
 	   withCredentials([string(variable: 'sonarToken')]) {
         def sonarToken = "sonar.login=${sonarToken}"
-        sh "${mvn} sonar:sonar -D${'http://34.215.1.164:9000/about'}  -D${sonarToken}"
+        sh "${mvn} sonar:sonar -D${sonarUrl}  -D${sonarToken}"
 	 }
       
    }
