@@ -6,15 +6,14 @@ node {
    stage('SCM Checkout'){
     // Clone repo
 	git branch: 'master', 
-	credentialsId: 'github', 
 	url: 'https://github.com/Alekyagit/mavenandgit'
    
    }
    
    stage('Sonar Publish'){
-	   withCredentials([string(credentialsId: 'sonarqube', variable: 'sonarToken')]) {
+	   withCredentials([string(variable: 'sonarToken')]) {
         def sonarToken = "sonar.login=${sonarToken}"
-        sh "${mvn} sonar:sonar -D${sonarUrl}  -D${sonarToken}"
+        sh "${mvn} sonar:sonar -D${http://34.215.1.164:9000/about}  -D${sonarToken}"
 	 }
       
    }
