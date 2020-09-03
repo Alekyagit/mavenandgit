@@ -7,7 +7,7 @@ node {
     // Clone repo
 	git branch: 'master', 
 	credentialsId: 'git',
-	git url: 'https://github.com/Alekyagit/my-app'
+	url: 'https://github.com/Alekyagit/my-app'
    
    }
    
