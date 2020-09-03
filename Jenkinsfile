@@ -2,12 +2,12 @@
 node {
    // This is to demo github action	
    def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
-   def mvn = tool (name: 'maven3', type: 'maven') + '/bin/mvn'
+   def mvn = tool (name: 'maven', type: 'maven') + '/bin/mvn'
    stage('SCM Checkout'){
     // Clone repo
 	git branch: 'master', 
 	credentialsId: 'github', 
-	url: 'https://github.com/javahometech/myweb'
+	url: 'https://github.com/Alekyagit/mavenandgit'
    
    }
    
@@ -21,9 +21,8 @@ node {
    
 	
    stage('Mvn Package'){
-	   // Build using maven
-	def mvn = tool name: 'maven', type: 'maven'   
-	   sh "${mvn}/bin/mvn clean package deploy"
+	   // Build using maven 
+	   sh "${mvn} clean package deploy"
    }
    
    stage('deploy-dev'){
@@ -45,7 +44,7 @@ node {
 							   Job Name: ${env.JOB_NAME}
 
 Thanks,
-DevOps Team""", cc: '', from: '', replyTo: '', subject: "${env.JOB_NAME} Success", to: 'hari.kammana@gmail.com'
+DevOps Team""", cc: '', from: '', replyTo: '', subject: "${env.JOB_NAME} Success", to: 'alekyajune19@gmail.com'
    
    }
 }
