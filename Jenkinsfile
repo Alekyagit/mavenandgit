@@ -13,7 +13,7 @@ node {
    
    stage('Sonar Publish'){
 	   withCredentials([string(variable: 'sonarToken')]) {
-        def sonarToken = "sonar.login=${sonarToken}"
+        def sonarToken = "sonar.login=${b1302fc3f31378ef67ac331b99a84bb7742b5615}"
         sh "${mvn} sonar:sonar -D${sonarUrl}  -D${sonarToken}"
 	 }
       
