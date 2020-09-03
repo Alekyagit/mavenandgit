@@ -1,7 +1,7 @@
 
 node {
    // This is to demo github action	
-   stage ('SCM checkout')
+	stage ('SCM checkout'){
 	git 'https://github.com/Alekyagit/mavenandgit.git'
 }
  stage('Mvn Package'){
@@ -9,3 +9,4 @@ node {
 	def mvn = tool name: 'maven', type: 'maven'
 	   sh "${mvn}/bin/mvn clean package deploy"
    }
+}
