@@ -17,5 +17,4 @@ Thanks,
 DevOps Team""", cc: '', from: '', replyTo: '', subject: "${env.JOB_NAME} Success", to: 'alekyajune19@gmail.com'
    
    }
-}
 
