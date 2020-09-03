@@ -7,7 +7,7 @@ node {
     // Clone repo
 	git branch: 'master', 
 	credentialsId: 'git',
-	url: 'https://github.com/Alekyagit/mavenandgit'
+	url: 'https://github.com/javahometech/my-app'
    
    }
    
