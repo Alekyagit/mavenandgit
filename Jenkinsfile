@@ -1,12 +1,12 @@
 
 node {
    // This is to demo github action	
-	stage ('SCM checkout'){
+	stage ('SCM Checkout'){
 	git 'https://github.com/Alekyagit/mavenandgit.git'
 }
- stage('Mvn Package'){
+ stage('Compile-Package'){
 	   // get maven hone path
 	def mvn = tool name: 'maven', type: 'maven'
-	   sh "${mvn}/bin/mvn clean package deploy"
+	   sh "${mvn}/bin/mvn package"
    }
 }
