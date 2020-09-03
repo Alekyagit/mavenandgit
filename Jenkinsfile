@@ -6,6 +6,7 @@ node {
    stage('SCM Checkout'){
     // Clone repo
 	git branch: 'master', 
+	credentialsId: 'git',
 	url: 'https://github.com/Alekyagit/mavenandgit'
    
    }
